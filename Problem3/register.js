@@ -11,6 +11,7 @@ var processEntries = function() {
     var first_name = $("first_name").value;
     var last_name = $("last_name").value;
     var customer_number = $("customer_number").value;
+    var social_security_number = $("social_security_number").value;
     var position = "customer";
     if ($("employee").checked) { position = "employee"; }
 
@@ -30,6 +31,10 @@ var processEntries = function() {
         customer_number = required;
         header = msg;
     }
+    if (social_security_number == "") {
+        social_security_number = required;
+        header = msg;
+    }
     if (position == "") {
         position = required;
         header = msg;
@@ -41,6 +46,7 @@ var processEntries = function() {
         html = html + "<tr><td>Last Name: </td><td>" + last_name + "</td></tr>";
         html = html + "<tr><td>Email: </td><td>" + email + "</td></tr>";
         html = html + "<tr><td>Customer Number: </td><td>" + customer_number + "</td></tr>";
+        html = html + "<tr><td>Employee SSN Number: </td><td>" + social_security_number + "</td></tr>";
         html = html + "<tr><td>Position: </td><td>" + position + "</td></tr>";
         $("registration_info").innerHTML = html;
     } else {
